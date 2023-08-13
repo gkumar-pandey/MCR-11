@@ -2,6 +2,13 @@ import {
   filterByGenre,
   filterByRating,
   filterByYear,
-  filterBySearch
+  filterBySearch,
+  findItemById
 } from "./filter";
-export { filterByGenre, filterByRating, filterByYear, filterBySearch };
+export {
+  filterByGenre,
+  filterByRating,
+  filterByYear,
+  filterBySearch,
+  findItemById
+};

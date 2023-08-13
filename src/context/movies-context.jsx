@@ -22,18 +22,18 @@ export const MovieContextProvider = ({ children }) => {
   });
 
   const watchlistBtnHandler = (id, isAddedToWatchlist) => {
-    const movie = movies.find((ele) => ele.id === id);
+    const movie = movies.find((ele) => ele.id == id);
     if (!isAddedToWatchlist) {
       setWatchlist((pre) => [...pre, movie]);
     } else {
-      setWatchlist((pre) => pre.filter((ele) => ele.id !== id));
+      setWatchlist((pre) => pre.filter((ele) => ele.id != id));
     }
   };
 
   const starredBtnHandler = (id, isStarred) => {
-    const movie = movies.find((ele) => ele.id === id);
+    const movie = movies.find((ele) => ele.id == id);
     if (isStarred) {
-      setStarredMovies((pre) => pre.filter((ele) => ele.id !== id));
+      setStarredMovies((pre) => pre.filter((ele) => ele.id != id));
     } else {
       setStarredMovies((pre) => [movie, ...pre]);
     }

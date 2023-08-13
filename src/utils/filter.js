@@ -14,3 +14,5 @@ export const filterBySearch = (data, searchQuery) => {
     title.toLowerCase().includes(searchQuery.toLowerCase())
   );
 };
+
+export const findItemById = (data, id) => data.find((ele) => ele.id == id);
