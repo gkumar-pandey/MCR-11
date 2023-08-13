@@ -1,4 +1,4 @@
-import { MovieCard } from "../../components";
+import { Container, MovieCard } from "../../components";
 import { useMovies } from "../../context/movies-context";
 
 export const StarredMoviesPage = () => {
@@ -6,9 +6,13 @@ export const StarredMoviesPage = () => {
 
   return (
     <div>
-      {starredMovies.map((ele) => (
-        <MovieCard {...ele} key={ele.id} />
-      ))}
+      <Container>
+        <div className="">
+          {starredMovies.map((ele) => (
+            <MovieCard {...ele} key={ele.id} />
+          ))}
+        </div>
+      </Container>
     </div>
   );
 };

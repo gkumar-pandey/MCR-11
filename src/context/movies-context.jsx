@@ -60,6 +60,10 @@ export const MovieContextProvider = ({ children }) => {
     return filteredData;
   };
 
+  const addNewMovie = (movie) => {
+    setMovies((pre) => [{ id: pre.length + 1, ...movie }, ...pre]);
+  };
+
   //   useEffect(() => {
   //     const data = JSON.parse(localStorage.getItem("movies"));
   //     if (data) {
@@ -82,7 +86,8 @@ export const MovieContextProvider = ({ children }) => {
         watchlist,
         data,
         setFilter,
-        filter
+        filter,
+        addNewMovie
       }}
     >
       {children}

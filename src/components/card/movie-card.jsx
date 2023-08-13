@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 
+import { Link } from "react-router-dom";
 import { useMovies } from "../../context/movies-context";
 
 /* eslint-disable react/prop-types */
@@ -21,9 +22,9 @@ export const MovieCard = ({
   return (
     <div className="w-80 rounded m-3 border shadow-md p-1  ">
       <div className=" flex flex-col justify-between  ">
-        <>
+        <Link to={`/movie/${id}`}>
           <img className="w-full object-cover h-[25rem]" src={imageURL} />
-        </>
+        </Link>
         <div className=" flex flex-col justify-between   ">
           <h2 className=" text-lg font-bold py-2 ">{title}</h2>
           <p className=" line-clamp-3 ">{summary}</p>

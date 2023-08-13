@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useMovies } from "../../context/movies-context";
 import styles from "./filter.module.css";
 
@@ -84,9 +85,11 @@ export const Filter = () => {
           </select>
         </div>
         <div>
-          <button className=" py-1 px-3 text-lg font-medium bg-slate-900 text-white rounded ">
-            Add a Movie
-          </button>
+          <Link to={"/add-movie"}>
+            <button className=" py-1 px-3 text-lg font-medium bg-slate-900 text-white rounded ">
+              Add a Movie
+            </button>
+          </Link>
         </div>
       </div>
     </div>
