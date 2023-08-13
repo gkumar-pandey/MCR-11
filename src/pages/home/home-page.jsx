@@ -9,13 +9,23 @@ export const HomePage = () => {
         <div className="p-4 ">
           <Filter />
         </div>
-        <div className=" flex flex-wrap  ">
-          {data?.map((ele) => (
-            <div key={ele.id}>
-              <MovieCard {...ele} />
+        <>
+          {data.length == 0 ? (
+            <div className=" text-center font-semibold text-xl  ">
+              <h2>Movies Not Found</h2>
             </div>
-          ))}
-        </div>
+          ) : (
+            <>
+              <div className=" flex flex-wrap border justify-center  ">
+                {data?.map((ele) => (
+                  <div key={ele.id}>
+                    <MovieCard {...ele} />
+                  </div>
+                ))}
+              </div>
+            </>
+          )}
+        </>
       </Container>
     </div>
   );

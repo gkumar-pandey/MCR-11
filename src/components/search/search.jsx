@@ -8,7 +8,6 @@ export const Search = () => {
     setFilter((pre) => ({ ...pre, [name]: value }));
   };
 
-  console.log(filter);
   return (
     <>
       <input

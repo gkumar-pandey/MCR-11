@@ -37,8 +37,6 @@ export const Filter = () => {
     setFilter((pre) => ({ ...pre, [name]: value }));
   };
 
-  console.log(filter);
-
   return (
     <div>
       <div className=" flex flex-row items-center justify-between ">

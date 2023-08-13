@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { moviesData } from "../staticdata";
 import {
   filterByGenre,
@@ -61,17 +61,17 @@ export const MovieContextProvider = ({ children }) => {
   };
 
   const addNewMovie = (movie) => {
-    setMovies((pre) => [{ id: pre.length + 1, ...movie }, ...pre]);
+    const updatedData = [{ id: movies.length + 1, ...movie }, ...movies];
+    setMovies(() => [...updatedData]);
+    localStorage.setItem("movies", JSON.stringify(updatedData));
   };
 
-  //   useEffect(() => {
-  //     const data = JSON.parse(localStorage.getItem("movies"));
-  //     if (data) {
-  //       // do something
-  //     } else {
-  //       setMovies(() => [...moviesData]);
-  //     }
-  //   }, []);
+  useEffect(() => {
+    const data = JSON.parse(localStorage.getItem("movies"));
+    if (data) {
+      setMovies(data);
+    }
+  }, []);
 
   const data = filterMovies();
 
@@ -81,6 +81,7 @@ export const MovieContextProvider = ({ children }) => {
         movies,
         setMovies,
         watchlistBtnHandler,
+        setStarredMovies,
         starredBtnHandler,
         starredMovies,
         watchlist,
